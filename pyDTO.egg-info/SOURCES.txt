@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+pyDTO/__init.__.py
+pyDTO/api.py
+pyDTO/data_manager.py
+pyDTO/engine.py
+pyDTO.egg-info/PKG-INFO
+pyDTO.egg-info/SOURCES.txt
+pyDTO.egg-info/dependency_links.txt
+pyDTO.egg-info/requires.txt
+pyDTO.egg-info/top_level.txt
