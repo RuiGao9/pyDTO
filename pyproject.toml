@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=64.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyDTO"
+version = "0.1.0"
+description = "A Python tool to calculate distance to the Pacific Ocean from California."
+authors = [{name = "Your Name"}]
+license = {text = "MIT"}
+dependencies = [
+    "geopandas>=0.14.0",
+    "shapely>=2.0.0",
+    "pyproj>=3.6.0",
+    "fiona"
+]
+requires-python = ">=3.9"
+
+[tool.setuptools]
+packages = ["pyDTO"]
+
+[tool.setuptools.package-data]
+# include all kinds of data format
+"*" = ["data/*.shp", "data/*.shx", "data/*.dbf", "data/*.prj"]
