@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19560836.svg)](https://doi.org/10.5281/zenodo.19560836)
+![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9/pyDTO)<br>
 # A geospatial toolkit for calculating distances to California's geographic boundaries (pyDTO)
 Fast, Python-based calculation of distances to the California coastline, terrestrial borders, and latitudinal extremes.
 
@@ -47,6 +49,7 @@ pyDTO.plot_dto(merced_lon, merced_lat)
 </figure>
 
 ## How to cite this work
+Gao, R., Khan, M., & Viers, J. H. (2026). A geospatial toolkit for calculating distances to California's geographic boundaries (v0.1.0). Zenodo. https://doi.org/10.5281/zenodo.19560836
 
 ## Repository update information
 - Creation date: 2026-04-13

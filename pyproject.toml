@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "pyDTO"
 version = "0.1.0"
-description = "A Python tool to calculate distance to the Pacific Ocean from California."
+description = "A geospatial toolkit for calculating distances to California's geographic boundaries"
 authors = [{name = "Rui Gao"}]
 license = {text = "MIT"}
 dependencies = [
