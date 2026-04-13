@@ -1,9 +1,10 @@
 import os
 import geopandas as gpd
 
+
 def load_ca_data():
     base_path = os.path.dirname(__file__)
-    # 这里的 ".." 是关键，它表示从 pyDTO 文件夹向上跳到根目录，再进入 data
+    # Back to the root directory, then into the data folder
     shp_path = os.path.normpath(os.path.join(base_path, "..", "data", "CA_Counties.shp"))
     
     print(f"DEBUG: Trying to load file: {shp_path}") 

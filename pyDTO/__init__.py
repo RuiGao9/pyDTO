@@ -1,6 +1,7 @@
-# 这一行非常重要：它把 api.py 里的函数拉到了包的最顶层
+# This is a crucial line: it brings the functions from api.py to the top level of the package, 
+# allowing users to call pyDTO.get_dist and pyDTO.plot_dto directly.
 from .api import get_dist
 from .api import plot_dto
 
-# 这样用户可以直接通过 pyDTO.get_dist 调用
-__all__ = ["get_dist"]
+# This allows users to directly call pyDTO.get_dist and pyDTO.plot_dto without needing to import from submodules.
+__all__ = ["get_dist", "plot_dto"]
