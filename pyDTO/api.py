@@ -18,6 +18,11 @@ def get_dist(lon, lat, unit='km'):
     2. 调用引擎计算四个方向到边界的距离
     3. 返回格式化的结果
     """
+
+    from shapely.geometry import Point
+
+    p = Point(lon, lat)
+    print(f"DEBUG: Received location is within California state? {_CA_POLYGON.contains(p)}")
     if _CA_POLYGON is None:
         return {"error": "Data not loaded correctly."}
 

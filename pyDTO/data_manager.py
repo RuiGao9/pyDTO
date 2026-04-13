@@ -1,18 +1,18 @@
-import geopandas as gpd
 import os
+import geopandas as gpd
 
 def load_ca_data():
-    # head to data folder, and find ".shp"
     base_path = os.path.dirname(__file__)
-    # back to root folder, get into data folder again
-    shp_path = os.path.join(base_path, "..", "data", "CA_Counties.shp")
+    # 这里的 ".." 是关键，它表示从 pyDTO 文件夹向上跳到根目录，再进入 data
+    shp_path = os.path.normpath(os.path.join(base_path, "..", "data", "CA_Counties.shp"))
+    
+    print(f"DEBUG: Trying to load file: {shp_path}") 
     
     if not os.path.exists(shp_path):
-        raise FileNotFoundError(f"Cannot find reference map: {shp_path}")
-        
-    ca_poly = gpd.read_file(shp_path)
+        print(f"DEBUG: Errors! No such file: {shp_path}")
+        return None
     
-    # core process: extract the shapefile
-    # only one record for the shapefile
-    # ca_poly = gdf.unary_union
-    return ca_poly
+    gdf = gpd.read_file(shp_path)
+    gdf = gdf.to_crs("EPSG:4326")  # Using WGS84 coordinate system
+
+    return gdf.unary_union

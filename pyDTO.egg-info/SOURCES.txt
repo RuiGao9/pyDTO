@@ -1,7 +1,7 @@
 LICENSE
 README.md
 pyproject.toml
-pyDTO/__init.__.py
+pyDTO/__init__.py
 pyDTO/api.py
 pyDTO/data_manager.py
 pyDTO/engine.py
