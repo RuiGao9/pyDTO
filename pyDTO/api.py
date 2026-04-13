@@ -27,7 +27,7 @@ def get_dist(lon, lat, unit='km'):
         return {"error": "pyDTO failed to initialize. Check if shapefile is missing."}
     
     p = Point(lon, lat)
-    print(f"DEBUG: Received location is within California state? {_CA_POLYGON.contains(p)}")
+    # print(f"DEBUG: Received location is within California state? {_CA_POLYGON.contains(p)}")
     if _CA_POLYGON is None:
         return {"error": "Data not loaded correctly."}
 
