@@ -48,4 +48,7 @@ pyDTO.plot_dto(merced_lon, merced_lat)
 
 ## How to cite this work
 
-## Reference
+## Repository update information
+- Creation date: 2026-04-13
+- Last update: 2026-04-13
+- Contact: If you encounter any issues or have questions, please contact Rui Gao at Rui.Ray.Gao@gmail.com
