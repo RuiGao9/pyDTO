@@ -5,7 +5,7 @@ import geopandas as gpd
 
 def load_ca_data():
     MODULE_DIR = Path(__file__).resolve().parent
-    SHP_PATH = MODULE_DIR / "data" / "california_boundary.shp"
+    SHP_PATH = MODULE_DIR / "data" / "CA_Counties.shp"
 
     if not SHP_PATH.exists():
         raise FileNotFoundError(f"Missing shapefile at: {SHP_PATH}")
