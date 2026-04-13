@@ -27,9 +27,10 @@ def get_dist(lon, lat, unit='km'):
         return {"error": "pyDTO failed to initialize. Check if shapefile is missing."}
     
     p = Point(lon, lat)
-    # print(f"DEBUG: Received location is within California state? {_CA_POLYGON.contains(p)}")
-    # if _CA_POLYGON is None:
-    #     return {"error": "Data not loaded correctly."}
+    if not _CA_POLYGON.contains(p):
+        raise ValueError(f"The input coordinates ({lon}, {lat}) are outside the California state boundary. "
+                         "This tool only supports locations within California.")
+    print(f"DEBUG: Location is verified within California.")
 
     # Call the calculation logic in engine.py
     raw_distances = _ENGINE.get_distances(lon, lat, _CA_POLYGON)
