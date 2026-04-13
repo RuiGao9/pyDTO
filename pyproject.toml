@@ -19,7 +19,9 @@ requires-python = ">=3.9"
 
 [tool.setuptools]
 packages = ["pyDTO"]
+include-package-data = true
 
 [tool.setuptools.package-data]
 # include all kinds of data format
-"*" = ["data/*.shp", "data/*.shx", "data/*.dbf", "data/*.prj"]
+"pyDTO" = ["data/*"]
+# "*" = ["data/*.shp", "data/*.shx", "data/*.dbf", "data/*.prj"]
