@@ -28,8 +28,8 @@ def get_dist(lon, lat, unit='km'):
     
     p = Point(lon, lat)
     # print(f"DEBUG: Received location is within California state? {_CA_POLYGON.contains(p)}")
-    if _CA_POLYGON is None:
-        return {"error": "Data not loaded correctly."}
+    # if _CA_POLYGON is None:
+    #     return {"error": "Data not loaded correctly."}
 
     # Call the calculation logic in engine.py
     raw_distances = _ENGINE.get_distances(lon, lat, _CA_POLYGON)
