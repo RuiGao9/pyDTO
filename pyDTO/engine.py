@@ -11,6 +11,9 @@ class DTOEngine:
         self.transformer = pyproj.Transformer.from_crs(self.wgs84, self.ca_albers, always_xy=True).transform
 
     def get_distances(self, lon, lat, polygon):
+        if polygon is None:
+            return {"error": "Polygon data is missing."}
+        
         p_orig = Point(lon, lat)
         boundary = polygon.boundary
         
