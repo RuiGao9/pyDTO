@@ -1,5 +1,9 @@
 from .data_manager import load_ca_data
 from .engine import DTOEngine
+import matplotlib.pyplot as plt
+import geopandas as gpd
+from shapely.geometry import Point, LineString
+
 
 # 1. 在模块加载时预读数据和初始化引擎 (Singleton Pattern)
 # 这样用户多次调用 get_dist 时，不需要重复加载繁重的 Shapefile
@@ -18,8 +22,6 @@ def get_dist(lon, lat, unit='km'):
     2. 调用引擎计算四个方向到边界的距离
     3. 返回格式化的结果
     """
-
-    from shapely.geometry import Point
 
     p = Point(lon, lat)
     print(f"DEBUG: Received location is within California state? {_CA_POLYGON.contains(p)}")
@@ -44,3 +46,41 @@ def get_dist(lon, lat, unit='km'):
         "unit": unit,
         "distances": formatted_dist
     }
+
+
+def plot_dto(lon, lat, results=None):
+    """
+    可视化加州边界、目标点以及四个方向的射线/跨度。
+    """
+    # 1. 加载边界数据
+    from .api import _CA_POLYGON
+    if _CA_POLYGON is None:
+        print("Error: Boundary data not loaded.")
+        return
+
+    fig, ax = plt.subplots(figsize=(10, 12))
+    
+    # 2. 绘制加州背景
+    gdf = gpd.GeoSeries([_CA_POLYGON], crs="EPSG:4326")
+    gdf.plot(ax=ax, color='#f0f0f0', edgecolor='#444444', linewidth=1, label='CA Boundary')
+    
+    # 3. 绘制目标点
+    ax.scatter(lon, lat, color='red', s=100, zorder=5, label=f'Location ({lon}, {lat})')
+    
+    # 4. 绘制南北极值线 (垂直线)
+    min_x, min_y, max_x, max_y = _CA_POLYGON.bounds
+    ax.vlines(x=lon, ymin=min_y, ymax=max_y, color='blue', linestyle='--', alpha=0.6, label='N-S Range')
+    
+    # 5. 绘制东西射线 (水平线)
+    # 简单的示意线，展示寻找边界的过程
+    ax.hlines(y=lat, xmin=min_x, xmax=max_x, color='green', linestyle=':', alpha=0.6, label='E-W Rays')
+
+    # 6. 图表装饰
+    ax.set_title("pyDTO Geographic Context Visualization", fontsize=15)
+    ax.set_xlabel("Longitude")
+    ax.set_ylabel("Latitude")
+    ax.legend(loc='upper right')
+    ax.grid(True, linestyle='--', alpha=0.3)
+    ax.set_aspect('equal')
+    
+    plt.show()
