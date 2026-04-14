@@ -44,7 +44,7 @@ pyDTO.plot_dto(merced_lon, merced_lat)
 ```
 
 <figure>
-  <img src="data/image.png" alt="Demo" width="450">
+  <img src="pyDTO/data/image.png" alt="Demo" width="450">
   <figcaption>Figure 1: Geometric logic for directional boundary analysis. Distances are calculated as follows: West reflects the farthest intersection with the coastline; East represents the nearest contact with the state border; North and South measure the distance to the state’s latitudinal extremes along the meridian. </figcaption>
 </figure>
 
