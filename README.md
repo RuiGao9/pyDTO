@@ -1,5 +1,5 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19560836.svg)](https://doi.org/10.5281/zenodo.19560836)
-![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9/pyDTO)<br>
+![Stars](https://img.shields.io/github/stars/RuiGao9/pyDTO?style=social)<br>
 # A geospatial toolkit for calculating distances to California's geographic boundaries (pyDTO)
 Fast, Python-based calculation of distances to the California coastline, terrestrial borders, and latitudinal extremes.
 
