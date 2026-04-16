@@ -36,8 +36,8 @@ print(f"The data format of the California polygon is: {type(pyDTO.api._CA_POLYGO
 res = pyDTO.get_dist(merced_lon, merced_lat)
 # Extract distances from the dictionary and print them in a formatted way
 [to_n, to_s, to_e, to_w] = [res['distances'][d] for d in ['North', 'South', 'East', 'West']]
-print(  f"To the northest point of the boundary (parallel to the prime meridian): {to_n:.2f} km;\n" 
-        f"To the southest point of the boundary (parallel to the prime meridian): {to_s:.2f} km;\n"
+print(  f"To the northern limit point of the boundary (parallel to the prime meridian): {to_n:.2f} km;\n" 
+        f"To the southern limit point of the boundary (parallel to the prime meridian): {to_s:.2f} km;\n"
         f"To the east boundary (parallel to equator): {to_e:.2f} km;\n"
         f"To the west boundary (parallel to equator): {to_w:.2f} km")
 pyDTO.plot_dto(merced_lon, merced_lat)
