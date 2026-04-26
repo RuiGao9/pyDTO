@@ -30,7 +30,8 @@ def get_dist(lon, lat, unit='km'):
     if not _CA_POLYGON.contains(p):
         raise ValueError(f"The input coordinates ({lon}, {lat}) are outside the California state boundary. "
                          "This tool only supports locations within California.")
-    print(f"DEBUG: Location is verified within California.")
+    # Modify this part. Based on users' requests to decide if the information should be printed or not.
+    # print(f"DEBUG: Location is verified within California.")
 
     # Call the calculation logic in engine.py
     raw_distances = _ENGINE.get_distances(lon, lat, _CA_POLYGON)
