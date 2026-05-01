@@ -49,7 +49,7 @@ pyDTO.plot_dto(merced_lon, merced_lat)
 </figure>
 
 ## How to cite this work
-Gao, R., Khan, M., & Viers, J. H. (2026). A geospatial toolkit for calculating distances to California's geographic boundaries (v0.1.0). Zenodo. https://doi.org/10.5281/zenodo.19560836
+Gao, R., Safeeq, M., & Viers, J. H. (2026). A geospatial toolkit for calculating distances to California's geographic boundaries (v0.1.0). Zenodo. https://doi.org/10.5281/zenodo.19560836
 
 ## Repository update information
 - Creation date: 2026-04-13
